@@ -1,3 +1,24 @@
+# Event-Hunter-PERN
+
+![Image](event.png)
+
+## **_Table of Contents:_**
+
+1. More About Me
+2. Motivation
+3. Project Description
+4. Technologies Used
+5. Future Updates
+6. Credits
+
+[Trello Board] (https://trello.com/b/4TDr5Px9/event-hunter)
+
+[Entity Relationship Diagram](https://drive.google.com/drive/u/0/my-drive)
+
+[Component Hierarchy Diagram](https://lucid.app/lucidchart/3b28251c-faba-4220-a3e0-612451f15d9b/edit?beaconFlowId=770542B939E5BEE3&invitationId=inv_97f7800a-062a-4e0a-b619-2eb0b64ee92d&page=0_0#)
+
+---
+
 ## **_More About Me_**
 
 |         Name          |                                                             GitHub                                                              |                                                                        LinkedIn                                                                         |
