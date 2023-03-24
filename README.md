@@ -11,7 +11,7 @@
 5. Future Updates
 6. Credits
 
-[Trello Board] (https://trello.com/b/4TDr5Px9/event-hunter)
+[Trello Board](https://trello.com/b/4TDr5Px9/event-hunter)
 
 [Entity Relationship Diagram](https://drive.google.com/drive/u/0/my-drive)
 
