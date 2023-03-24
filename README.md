@@ -74,4 +74,3 @@ Event Hunter is a PERN stack application provides event tracking. Users can sign
 - LucidApp
 - draw.io
 - seatgeek.com
-# Event-Hunter-PERN
