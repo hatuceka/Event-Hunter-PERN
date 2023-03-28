@@ -1,22 +1,16 @@
 {
   "development": {
-    "username": "haticeyorukoglu",
-    "password": null,
-    "database": "db",
+    "database": "database_event_hunter",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "haticeyorukoglu",
-    "password": null,
-    "database": "db",
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "haticeyorukoglu",
-    "password": null,
-    "database": "db",
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
