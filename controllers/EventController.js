@@ -1,9 +1,21 @@
-//const { Event } = require('../models')
+const { Event } = require('../models')
 //const { Op } = require('sequelize')
 const axios = require('axios')
 require('dotenv').config()
 const CLIENT_ID = process.env.CLIENT_ID
 const CLIENT_SECRET = process.env.CLIENT_SECRET
+
+const CreateEvent = async (req, res) => {
+  try {
+    let eventBody = {
+      ...req.body
+    }
+    const newEvent = await Event.create(eventBody)
+    res.send(newEvent)
+  } catch (error) {
+    throw error
+  }
+}
 
 const GetEvents = async (req, res) => {
   try {
@@ -78,6 +90,7 @@ const SearchEvents = async (req, res) => {
 }
 
 module.exports = {
+  CreateEvent,
   GetEvents,
   GetEventById,
   SortEventsByDate,
