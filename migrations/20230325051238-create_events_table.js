@@ -22,9 +22,19 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
-      isSoldOut: {
-        type: Sequelize.BOOLEAN
-      },
+      // order_id: {
+      //   type: Sequelize.INTEGER,
+      //   allowNull: false,
+      //   field: 'order_id',
+      //   onDelete: 'CASCADE',
+      //   references: {
+      //     model: 'orders',
+      //     key: 'id'
+      //   }
+      // },
+      // isSoldOut: {
+      //   type: Sequelize.BOOLEAN
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Event.hasOne(models.Ticket, {
+      Event.hasOne(models.Order, {
         foreignKey: 'event_id',
         as: 'events',
         onDelete: 'CASCADE',
@@ -21,8 +21,16 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       category: DataTypes.STRING,
       dateTime: DataTypes.DATE,
-      location: DataTypes.STRING,
-      isSoldOut: DataTypes.BOOLEAN
+      location: DataTypes.STRING
+      // order_id: {
+      //   type: DataTypes.INTEGER,
+      //   onDelete: 'CASCADE',
+      //   references: {
+      //     model: 'orders',
+      //     key: 'id'
+      //   }
+      // }
+      //isSoldOut: DataTypes.BOOLEAN
     },
     {
       sequelize,
