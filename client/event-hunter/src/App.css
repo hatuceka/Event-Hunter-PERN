@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.navSection{
+  background-color: rgba(0, 170, 170, 0.504);
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+ 
+}
