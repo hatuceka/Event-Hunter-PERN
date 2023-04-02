@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({ user }) => {
+  const userId = localStorage.getItem('userId')
+
   return (
     <div className="navSection">
-      <NavLink to="/user-profile">User Profile</NavLink>
+      <NavLink to={`/user-profile/${userId}`}>User Profile</NavLink>
       <NavLink to="/about">About</NavLink>
       <NavLink to="/cart">Cart</NavLink>
       <NavLink to="/">Home</NavLink>

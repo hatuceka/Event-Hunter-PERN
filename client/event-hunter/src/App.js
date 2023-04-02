@@ -9,7 +9,7 @@ import Cart from './pages/Cart'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import SignIn from './pages/SignIn'
-// import EventList from './components/EventList'
+import EventDetails from './pages/EventDetails'
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
@@ -51,7 +51,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav />
+        <Nav user={user} />
       </header>
 
       <main>
@@ -68,12 +68,13 @@ const App = () => {
           />
           <Route path="/about" element={<About />} />
           <Route
-            path="/user-profile"
+            path="/user-profile/:user_id"
             element={
               <UserProfile
                 handleLogOut={handleLogOut}
                 user={user}
                 allUsers={allUsers}
+                checkToken={checkToken}
               />
             }
           />
@@ -93,6 +94,7 @@ const App = () => {
             element={<Login setUser={setUser} setShowing={setShowing} />}
           />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/events/:event_id" element={<EventDetails />} />
 
           {/* <Route path="/categories" element={<EventList />}></Route> */}
         </Routes>

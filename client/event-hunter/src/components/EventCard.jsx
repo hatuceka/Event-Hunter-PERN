@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const EventCard = ({ event }) => {
   return (
-    <Link to={`events/${event.title}`}>
+    <Link to={`events/${event.id}`}>
       <div>
         <p>{event.title}</p>
       </div>

@@ -4,6 +4,7 @@ export const LoginUser = async (data) => {
   try {
     const res = await User.post('/api/users/login', data)
     localStorage.setItem('token', res.data.token)
+    localStorage.setItem('userId', res.data.user.id)
     return res.data.user
   } catch (error) {
     throw error
@@ -12,7 +13,7 @@ export const LoginUser = async (data) => {
 
 export const RegisterUser = async (data) => {
   try {
-    const res = await User.post('api/users/register', data)
+    const res = await User.post('/api/users/register', data)
     return res.data
   } catch (error) {
     throw error
@@ -21,7 +22,17 @@ export const RegisterUser = async (data) => {
 
 export const checkSession = async () => {
   try {
-    const res = await User.get('api/users/session')
+    const res = await User.get('/api/users/session')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UserDetails = async (user_id) => {
+  //let userId = parseInt(req.params.user_id)
+  try {
+    const res = await User.get(`/api/users/details/${user_id}`)
     return res.data
   } catch (error) {
     throw error

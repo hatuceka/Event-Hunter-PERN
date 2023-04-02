@@ -47,6 +47,7 @@ export const FindEventsByCategory = async (type) => {
 
 export const SearchEvents = async (search) => {
   try {
+    console.log('searchTerm', search)
     const response = await User.get(`/api/events/search/${search}`)
     return response
   } catch (error) {
