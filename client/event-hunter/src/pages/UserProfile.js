@@ -25,7 +25,7 @@ const UserProfile = ({ user, checkToken }) => {
         </h1>
         <h2>{thisUser?.location}</h2>
         <h2>
-          Orders: <Cart />{' '}
+          Orders <Cart />{' '}
         </h2>
       </div>
     )
