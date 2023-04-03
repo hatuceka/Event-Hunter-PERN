@@ -10,12 +10,12 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      price: {
-        type: Sequelize.STRING
-      },
-      ticketCount: {
-        type: Sequelize.INTEGER
-      },
+      // price: {
+      //   type: Sequelize.STRING
+      // },
+      // ticketCount: {
+      //   type: Sequelize.INTEGER
+      // },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,

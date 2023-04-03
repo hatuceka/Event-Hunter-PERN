@@ -18,7 +18,7 @@ const CreateOrder = async (req, res) => {
 
 const GetOrders = async (req, res) => {
   try {
-    const orders = await Order.finAll()
+    const orders = await Order.findAll()
     res.send(orders)
   } catch (error) {
     throw error

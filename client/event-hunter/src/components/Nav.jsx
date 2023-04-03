@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { findEventsByCategory } from '../services/Event'
+import { useParams } from 'react-router-dom'
 
 const Nav = ({ user }) => {
   const userId = localStorage.getItem('userId')
@@ -9,6 +11,21 @@ const Nav = ({ user }) => {
   const toggleCategories = () => {
     setShowCategories(!showCategories)
   }
+
+  // useEffect(() => {
+  //   const fetchType = async () => {
+  //     //console.log(type)
+  //     //let events = await findEventsByCategory(type)
+  //     setEventList(events.data.events)
+  //   }
+  //   fetchType()
+  // }, [type])
+
+  // const onSubmit = async () => {
+  //   let res = await findEventsByCategory(type)
+  //   setShowCategories = true
+  //   findEventsByCategory()
+  // }
 
   return (
     <header>
@@ -26,7 +43,7 @@ const Nav = ({ user }) => {
           {showCategories && (
             <div className="dropdown-content">
               <NavLink to="/categories/music">Music</NavLink>
-              <NavLink to="/categories/sports">Sports</NavLink>
+              <NavLink to="/events/categories/sports">Sports</NavLink>
               <NavLink to="/categories/theater">Theater</NavLink>
             </div>
           )}

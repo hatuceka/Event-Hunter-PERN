@@ -19,9 +19,10 @@ module.exports = (sequelize, DataTypes) => {
   Event.init(
     {
       title: DataTypes.STRING,
-      category: DataTypes.STRING,
-      dateTime: DataTypes.DATE,
-      location: DataTypes.STRING
+      image: DataTypes.STRING,
+      type: DataTypes.STRING,
+      datetime_local: DataTypes.DATE,
+      venue: DataTypes.STRING
       // order_id: {
       //   type: DataTypes.INTEGER,
       //   onDelete: 'CASCADE',

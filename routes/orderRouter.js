@@ -3,8 +3,8 @@ const controller = require('../controllers/OrderController')
 const middleware = require('../middleware')
 
 Router.get('/', controller.GetOrders)
-Router.get('/:order_id', controller.GetOrderDetails)
-Router.get('/:user_id/orders', controller.GetOrdersByUser)
+Router.get('/details/:order_id', controller.GetOrderDetails)
+Router.get('/userDetails/:user_id', controller.GetOrdersByUser)
 Router.post(
   '/user/:user_id/event/:event_id',
   middleware.stripToken,

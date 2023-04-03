@@ -24,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Order.init(
     {
-      price: DataTypes.STRING,
-      ticketCount: DataTypes.INTEGER,
+      // price: DataTypes.STRING,
+      // ticketCount: DataTypes.INTEGER,
       user_id: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',

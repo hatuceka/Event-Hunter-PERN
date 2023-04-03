@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-//import axios from 'axios'
+import axios from 'axios'
 import { GetEventById, CreateEvent, FindEventFromDb } from '../services/Event'
 import { CreateOrder } from '../services/Order'
 import Cart from './Cart'
@@ -11,15 +11,6 @@ const EventDetails = ({ user }) => {
   //const [event_id, setEventId] = useState('')
   const [clicked, setClicked] = useState(false)
 
-  // const addToCart = (event) => {
-  //   let newCart = Cart
-  //   newCart.push(event)
-  //   setCart(newCart)
-  //   let eventArray = newOrder.events
-  //   eventArray.push(event_id)
-  //   setNewOrder({...newOrder, events: eventArray})
-  // }
-
   let { event_id } = useParams()
   const addToCart = async () => {
     await CreateOrder(user.id, event_id)
@@ -27,25 +18,16 @@ const EventDetails = ({ user }) => {
     setClicked(true)
   }
 
-  // const addToCart = async () => {
-  //   const order = {
-  //     event_id: event.id
-
-  //   }
-  //   await CreateOrder(order)
-  // }
-
   //let { event_id } = useParams()
+  //let event = FindEventFromDb(event_id)
+  // event.id = parseInt(event_id)
+
   useEffect(() => {
-    console.log(event_id)
-    let isCancelled = false
     const fetchDetails = async () => {
       let details = await GetEventById(event_id)
-      let eventInDb = false
-      eventInDb = await FindEventFromDb(event_id)
-      if (!isCancelled) {
-        setEventDetails(details.data)
-      }
+      let eventInDb = await FindEventFromDb(event_id)
+      setEventDetails(details.data)
+
       if (!eventInDb) {
         await CreateEvent({
           id: event_id,
@@ -57,11 +39,7 @@ const EventDetails = ({ user }) => {
         })
       }
     }
-
     fetchDetails()
-    return () => {
-      isCancelled = true
-    }
   }, [event_id])
   if (eventDetails.title)
     return (

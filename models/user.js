@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasMany(models.Ticket, {
+      User.hasMany(models.Order, {
         foreignKey: 'user_id',
         as: 'users',
         onDelete: 'CASCADE',

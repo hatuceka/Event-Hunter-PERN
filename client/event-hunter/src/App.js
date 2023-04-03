@@ -9,6 +9,7 @@ import Cart from './pages/Cart'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import SignIn from './pages/SignIn'
+import Sports from './components/Sports'
 import EventDetails from './pages/EventDetails'
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
@@ -99,7 +100,10 @@ const App = () => {
             element={<EventDetails user={user} />}
           />
 
-          {/* <Route path="/categories" element={<EventList />}></Route> */}
+          <Route
+            path="/events/category/:type"
+            element={<Sports showing={showing} setShowing={setShowing} />}
+          />
         </Routes>
       </main>
     </div>

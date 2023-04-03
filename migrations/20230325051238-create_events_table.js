@@ -13,13 +13,16 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      category: {
+      image: {
         type: Sequelize.STRING
       },
-      dateTime: {
+      type: {
+        type: Sequelize.STRING
+      },
+      datetime_local: {
         type: Sequelize.DATE
       },
-      location: {
+      venue: {
         type: Sequelize.STRING
       },
       // order_id: {

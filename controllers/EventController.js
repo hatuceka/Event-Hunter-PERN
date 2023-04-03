@@ -17,13 +17,36 @@ const CreateEvent = async (req, res) => {
   }
 }
 
+const FindEventFromDb = async (req, res) => {
+  try {
+    const event = await Event.findByPk(req.params.event_id)
+    // console.log(event)
+    if (event) {
+      return res.json(event)
+    } else {
+      return false
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+const GetAllEvents = async (req, res) => {
+  try {
+    const response = await Event.findAll()
+    res.send(response)
+  } catch (error) {
+    throw error
+  }
+}
+
 const GetEvents = async (req, res) => {
   try {
     const response = await axios.get(
       `https://api.seatgeek.com/2/events?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    res.send(response)
-    return res.status(200).json(response)
+    console.log(response.data)
+    return res.json(response.data)
   } catch (error) {
     throw error
   }
@@ -31,11 +54,13 @@ const GetEvents = async (req, res) => {
 
 const GetEventById = async (req, res) => {
   try {
+    const { event_id } = req.params
+    console.log(event_id)
     const response = await axios.get(
-      `https://api.seatgeek.com/2/events/${EVENT_ID}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+      `https://api.seatgeek.com/2/events/${event_id}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    res.send(response)
-    return res.status(200).json(response)
+
+    return res.json(response.data)
   } catch (error) {
     throw error
   }
@@ -46,8 +71,8 @@ const SortEventsByDate = async (req, res) => {
     const response = await axios.get(
       `https://api.seatgeek.com/2/events?sort=datetime_local.desc&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    res.send(response)
-    return res.status(200).json(response)
+
+    return res.json(response)
   } catch (error) {
     throw error
   }
@@ -59,7 +84,7 @@ const FindEventsByCity = async (req, res) => {
     const events = await axios.get(
       `https://api.seatgeek.com/2/events?venue.city=${venue}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    return res.status(200).json(events)
+    return res.json(events)
   } catch (error) {
     throw error
   }
@@ -68,10 +93,11 @@ const FindEventsByCity = async (req, res) => {
 const FindEventsByCategory = async (req, res) => {
   try {
     const { type } = req.params
+    console.log(type)
     const events = await axios.get(
       `https://api.seatgeek.com/2/events?taxonomies.name=${type}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    return res.status(200).json(events)
+    return res.json(events.data)
   } catch (error) {
     throw error
   }
@@ -80,10 +106,10 @@ const FindEventsByCategory = async (req, res) => {
 const SearchEvents = async (req, res) => {
   try {
     const { search } = req.params
-    const events = await axios.get(
+    const response = await axios.get(
       `https://api.seatgeek.com/2/events?q=${search}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
-    return res.status(200).json(events)
+    return res.json(response.data)
   } catch (error) {
     throw error
   }
@@ -92,9 +118,11 @@ const SearchEvents = async (req, res) => {
 module.exports = {
   CreateEvent,
   GetEvents,
+  GetAllEvents,
   GetEventById,
   SortEventsByDate,
   SearchEvents,
   FindEventsByCity,
-  FindEventsByCategory
+  FindEventsByCategory,
+  FindEventFromDb
 }
