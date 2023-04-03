@@ -1,5 +1,23 @@
 import User from './api'
 
+export const CreateEvent = async () => {
+  try {
+    const response = await User.post('/api/events/create-event')
+    return response
+  } catch (error) {
+    throw error
+  }
+}
+
+export const FindEventFromDb = async (event_id) => {
+  try {
+    const response = await User.get(`/api/events/from-database/${event_id}`)
+    return response
+  } catch (error) {
+    throw error
+  }
+}
+
 export const GetEvents = async () => {
   try {
     const response = await User.get('/api/events')

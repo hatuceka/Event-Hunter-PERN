@@ -51,7 +51,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav user={user} />
+        <Nav user={user} handleLogOut={handleLogOut} />
       </header>
 
       <main>
@@ -94,7 +94,10 @@ const App = () => {
             element={<Login setUser={setUser} setShowing={setShowing} />}
           />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/events/:event_id" element={<EventDetails />} />
+          <Route
+            path="/events/:event_id"
+            element={<EventDetails user={user} />}
+          />
 
           {/* <Route path="/categories" element={<EventList />}></Route> */}
         </Routes>
