@@ -42,9 +42,9 @@ const Nav = ({ user, orderCount, order }) => {
           </button>
           {showCategories && (
             <div className="dropdown-content">
-              <NavLink to="/categories/music">Music</NavLink>
-              <NavLink to="/events/categories/sports">Sports</NavLink>
-              <NavLink to="/categories/theater">Theater</NavLink>
+              <NavLink to="/category/music">Music</NavLink>
+              <NavLink to="/events/category/sports">Sports</NavLink>
+              <NavLink to="/category/theater">Theater</NavLink>
             </div>
           )}
         </div>

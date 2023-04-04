@@ -5,8 +5,10 @@ import EventCard from '../components/EventCard'
 import { CreateOrder } from '../services/Order'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import OrderForm from '../components/OrderForm'
 
 const Cart = ({
+  user_id,
   cart,
   handleChange,
   addOrder,
@@ -26,19 +28,22 @@ const Cart = ({
   let { event_id } = useParams()
   const [events, setEvents] = useState({})
   const [allEvents, setAllEvents] = useState([])
-  console.log(event_id)
   const eventDetails = allEvents.find((event) => {
     return event.id === parseInt(event_id)
   })
+  //console.log(event_id)
 
-  const placeOrder = async (user_id, event_id) => {
-    let place = await CreateOrder(user_id, event_id)
-    setNewOrder(place.data)
-  }
-  placeOrder()
+  // const placeOrder = async (user_id, event_id) => {
+  //   let place = await CreateOrder(user_id, event_id)
+  //   //console.log(place)
+  //   setNewOrder(place.data)
+  //   // console.log(place)
+  // }
+  // //placeOrder()
 
   useEffect(() => {
     setEvents(eventDetails)
+    getAllOrders()
   }, [])
 
   const handleDelete = (orderId) => {
@@ -47,9 +52,9 @@ const Cart = ({
     setCart(updatedCart)
   }
 
-  useEffect(() => {
-    getAllOrders()
-  }, [])
+  // useEffect(() => {
+  //   getAllOrders()
+  // }, [])
 
   return (
     <div>
@@ -64,7 +69,7 @@ const Cart = ({
           </div>
         ))}
       </div>
-      <button onClick={placeOrder}>Place Order</button>
+      <button>{<OrderForm user_id={user_id} event_id={event_id} />}</button>
     </div>
   )
 }

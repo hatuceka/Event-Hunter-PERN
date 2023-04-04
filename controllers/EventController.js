@@ -91,10 +91,10 @@ const FindEventsByCity = async (req, res) => {
 
 const FindEventsByCategory = async (req, res) => {
   try {
-    const { type } = req.params
-    console.log(type)
+    // const { type } = req.params
+    // console.log(type)
     const events = await axios.get(
-      `https://api.seatgeek.com/2/events?taxonomies.name=${type}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+      `https://api.seatgeek.com/2/events?taxonomies.name=sports&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
     return res.json(events.data)
   } catch (error) {

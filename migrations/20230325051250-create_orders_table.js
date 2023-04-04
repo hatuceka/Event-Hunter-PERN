@@ -16,6 +16,15 @@ module.exports = {
       // ticketCount: {
       //   type: Sequelize.INTEGER
       // },
+      name: {
+        type: Sequelize.STRING
+      },
+      cardNumber: {
+        type: Sequelize.STRING
+      },
+      address: {
+        type: Sequelize.STRING
+      },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,

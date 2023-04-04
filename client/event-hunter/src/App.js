@@ -49,6 +49,9 @@ const App = () => {
     setCart([])
   }
 
+  // let event_id = event_id
+  // let user_id = user_id
+
   const handleChange = (e) => {
     setNewOrder({ ...newOrder, [e.target.id]: e.target.value })
   }
@@ -161,6 +164,8 @@ const App = () => {
                 orders={orders}
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
+                // user_id={user_id}
+                // event_id={event_id}
               />
             }
           />
@@ -172,7 +177,7 @@ const App = () => {
           />
 
           <Route
-            path="/events/categories/:type"
+            path="/events/category/sports"
             element={<Sports showing={showing} setShowing={setShowing} />}
           />
         </Routes>
