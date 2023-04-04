@@ -55,7 +55,6 @@ const GetEvents = async (req, res) => {
 const GetEventById = async (req, res) => {
   try {
     const { event_id } = req.params
-    console.log(event_id)
     const response = await axios.get(
       `https://api.seatgeek.com/2/events/${event_id}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )

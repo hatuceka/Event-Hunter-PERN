@@ -29,6 +29,7 @@ export const GetEvents = async () => {
 
 export const GetEventById = async (event_id) => {
   try {
+    console.log(event_id)
     const response = await User.get(`/api/events/event/${event_id}`)
     return response
   } catch (error) {
