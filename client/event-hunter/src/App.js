@@ -31,7 +31,7 @@ const App = () => {
   })
   const [events, setEvents] = useState([])
   const [showing, setShowing] = useState(false)
-  const [orderCount, setOrderCount] = useState(0)
+  const [orderCount, setOrderCount] = useState(cart.length)
 
   const addOrder = async (e) => {
     e.preventDefault()

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { findEventsByCategory } from '../services/Event'
 import { useParams } from 'react-router-dom'
 
-const Nav = ({ user, orderCount }) => {
+const Nav = ({ user, orderCount, order }) => {
   const userId = localStorage.getItem('userId')
 
   const [showCategories, setShowCategories] = useState(false)
