@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { findEventsByCategory } from '../services/Event'
 import { useParams } from 'react-router-dom'
 
-const Nav = ({ user }) => {
+const Nav = ({ user, orderCount }) => {
   const userId = localStorage.getItem('userId')
 
   const [showCategories, setShowCategories] = useState(false)
@@ -32,7 +32,7 @@ const Nav = ({ user }) => {
       <div className="navSection">
         <NavLink to={`/user-profile/${userId}`}>User Profile</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/cart">Cart</NavLink>
+        <NavLink to="/cart">Cart ({orderCount}) </NavLink>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/sign-in">SignIn</NavLink>
         <div className="dropdown">

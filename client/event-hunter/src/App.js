@@ -27,13 +27,18 @@ const App = () => {
   const [newOrder, setNewOrder] = useState({
     // user_id,
     // event_id
+    events: []
   })
   const [events, setEvents] = useState([])
   const [showing, setShowing] = useState(false)
+  const [orderCount, setOrderCount] = useState(0)
 
   const addOrder = async (e) => {
     e.preventDefault()
-    let response = await axios.post('http://localhost:3001/order', newOrder)
+    let response = await axios.post(
+      'http://localhost:3001/api/orders',
+      newOrder
+    )
     let currentOrders = orders
     currentOrders.push(response.data.order)
     setOrders(currentOrders)
@@ -53,14 +58,15 @@ const App = () => {
     newCart.push(event)
     setCart(newCart)
     let eventArr = newOrder.events
-    console.log(eventArr)
+
     eventArr.push(event.id)
-    //console.log(event._id)
+
     setNewOrder({ ...newOrder, events: eventArr })
+    setOrderCount(orderCount + 1)
   }
 
   const getAllOrders = async () => {
-    const res = await axios.get('http://localhost:3001/orders')
+    const res = await axios.get('http://localhost:3001/api/orders')
     setOrders(res.data.orders)
   }
 
@@ -100,7 +106,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav user={user} handleLogOut={handleLogOut} />
+        <Nav user={user} handleLogOut={handleLogOut} orderCount={orderCount} />
       </header>
 
       <main>
