@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { CreateOrder } from '../services/Order'
 
 const OrderForm = ({ user, event_id }) => {
+  //console.log(user_id)
+  //console.log(event_id)
   const initialState = {
     name: '',
     cardNumber: '',
@@ -25,8 +27,8 @@ const OrderForm = ({ user, event_id }) => {
     }
     await CreateOrder(
       {
-        event_id,
-        user,
+        event_id: event_id,
+        user_id: user.id,
         name: orderFormValues.name,
         cardNumber: orderFormValues.cardNumber,
         address: orderFormValues.address

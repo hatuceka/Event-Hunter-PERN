@@ -25,16 +25,16 @@ module.exports = {
       venue: {
         type: Sequelize.STRING
       },
-      // order_id: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   field: 'order_id',
-      //   onDelete: 'CASCADE',
-      //   references: {
-      //     model: 'orders',
-      //     key: 'id'
-      //   }
-      // },
+      order_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'order_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'orders',
+          key: 'id'
+        }
+      },
       // isSoldOut: {
       //   type: Sequelize.BOOLEAN
       // },

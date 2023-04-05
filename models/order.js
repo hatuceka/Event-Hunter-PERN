@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
-      Order.belongsTo(models.Event, {
-        foreignKey: 'event_id',
-        as: 'events',
+      Order.hasMany(models.Event, {
+        foreignKey: 'order_id',
+        as: 'orders',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
@@ -36,15 +36,15 @@ module.exports = (sequelize, DataTypes) => {
           model: 'users',
           key: 'id'
         }
-      },
-      event_id: {
-        type: DataTypes.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'events',
-          key: 'id'
-        }
       }
+      // event_id: {
+      //   type: DataTypes.INTEGER,
+      //   onDelete: 'CASCADE',
+      //   references: {
+      //     model: 'events',
+      //     key: 'id'
+      //   }
+      // }
     },
     {
       sequelize,

@@ -8,7 +8,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import OrderForm from '../components/OrderForm'
 
 const Cart = ({
-  user_id,
+  user,
   cart,
   handleChange,
   addOrder,
@@ -21,15 +21,18 @@ const Cart = ({
   orderCount,
   setOrderCount
 }) => {
+  console.log(user)
+  console.log(cart)
+
   const handleSubmit = (e) => {
     addOrder(e)
   }
 
-  let { event_id } = useParams()
+  // let { event_id } = useParams()
   const [events, setEvents] = useState({})
   const [allEvents, setAllEvents] = useState([])
   const eventDetails = allEvents.find((event) => {
-    return event.id === parseInt(event_id)
+    // return event.id === parseInt(event_id)
   })
   //console.log(event_id)
 
@@ -69,7 +72,7 @@ const Cart = ({
           </div>
         ))}
       </div>
-      <button>{<OrderForm user_id={user_id} event_id={event_id} />}</button>
+      <button>{<OrderForm user={user} />}</button>
     </div>
   )
 }

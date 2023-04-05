@@ -35,16 +35,16 @@ module.exports = {
           key: 'id'
         }
       },
-      event_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        field: 'event_id',
-        onDelete: 'CASCADE',
-        references: {
-          model: 'events',
-          key: 'id'
-        }
-      },
+      // event_id: {
+      //   type: Sequelize.INTEGER,
+      //   allowNull: false,
+      //   field: 'event_id',
+      //   onDelete: 'CASCADE',
+      //   references: {
+      //     model: 'events',
+      //     key: 'id'
+      //   }
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

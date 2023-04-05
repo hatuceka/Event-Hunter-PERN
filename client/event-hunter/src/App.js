@@ -164,7 +164,7 @@ const App = () => {
                 orders={orders}
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
-                // user_id={user_id}
+                user={user}
                 // event_id={event_id}
               />
             }
