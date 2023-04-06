@@ -18,7 +18,7 @@ const UserProfile = ({
   useEffect(() => {
     checkToken()
     const fetchDetails = async () => {
-      let details = await UserDetails(user_id)
+      let details = await UserDetails(user.id)
       setThisUser(details)
     }
     fetchDetails()

@@ -68,7 +68,7 @@ const App = () => {
     eventArr.push(event.id)
 
     setNewOrder({ ...newOrder, events: eventArr })
-    setOrderCount(orderCount + 1)
+    setOrderCount(cart.length + 1)
   }
 
   const getAllOrders = async () => {
@@ -112,7 +112,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav user={user} handleLogOut={handleLogOut} />
+        <Nav user={user} handleLogOut={handleLogOut} orderCount={orderCount} />
       </header>
 
       <main>
@@ -168,7 +168,7 @@ const App = () => {
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
                 user={user}
-                //orderCount={orderCount}
+                orderCount={orderCount}
                 // event_id={event_id}
               />
             }

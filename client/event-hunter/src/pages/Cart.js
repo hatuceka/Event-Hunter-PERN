@@ -29,6 +29,7 @@ const Cart = ({
   }
 
   // let { event_id } = useParams()
+
   const [events, setEvents] = useState({})
   const [allEvents, setAllEvents] = useState([])
   const eventDetails = allEvents.find((event) => {
@@ -46,12 +47,13 @@ const Cart = ({
 
   useEffect(() => {
     setEvents(eventDetails)
+
     getAllOrders()
-  }, [])
+  }, [cart])
 
   const handleDelete = (orderId) => {
     const updatedCart = cart.filter((order) => order.id !== orderId)
-    // setOrderCount(cart.length)
+    //updateOrderCount(setOrderCount)
     setCart(updatedCart)
   }
 
