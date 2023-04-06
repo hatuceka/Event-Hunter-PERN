@@ -10,7 +10,7 @@ const UpdateProfile = ({ user, firstName, lastName, email, location }) => {
     email,
     location
   })
-  //const [updated, setUpdated] = useState(false)
+  const [updated, setUpdated] = useState(false)
   let navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -23,8 +23,8 @@ const UpdateProfile = ({ user, firstName, lastName, email, location }) => {
     localStorage.setItem('token', res.data.token)
     localStorage.setItem('userId', res.data.user_id)
     setUserDetails({ ...userDetails })
-    //setUpdated(true)
-    navigate('/user-profile')
+    setUpdated(true)
+    navigate(`/user-profile/${user_id}`)
   }
 
   return (

@@ -59,7 +59,8 @@ const App = () => {
   }
 
   const addToCart = (event) => {
-    let newCart = [...cart, event]
+    let newCart = cart
+    //[...cart, event]
     newCart.push(event)
     setCart(newCart)
     let eventArr = newOrder.events
