@@ -98,7 +98,7 @@ const SignUp = ({ setShowing }) => {
               onChange={handleChange}
               name="location"
               type="text"
-              placeholder="Location"
+              placeholder="Address"
               value={formValues.location}
               required
             />

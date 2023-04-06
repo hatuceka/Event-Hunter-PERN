@@ -21,8 +21,8 @@ const Cart = ({
   orderCount,
   setOrderCount
 }) => {
-  console.log(user)
-  console.log(cart)
+  // console.log(user)
+  //console.log(cart)
 
   const handleSubmit = (e) => {
     addOrder(e)

@@ -6,7 +6,7 @@ Router.get('/', controller.GetOrders)
 Router.get('/details/:order_id', controller.GetOrderDetails)
 Router.get('/userDetails/:user_id', controller.GetOrdersByUser)
 Router.post(
-  '/user/:user_id/event/:event_id',
+  '/user/:user_id/event',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateOrder

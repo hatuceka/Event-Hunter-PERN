@@ -38,3 +38,8 @@ export const UserDetails = async (user_id) => {
     throw error
   }
 }
+
+// export const UpdateUser = async (user_id, userDet) => {
+//   const res = await User.put(`/api/users/update_user/${user_id}`, userDetails)
+//   return res.data
+// }

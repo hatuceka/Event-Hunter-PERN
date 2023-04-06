@@ -3,41 +3,32 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('events', {
+    await queryInterface.createTable('orders', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      title: {
+      name: {
         type: Sequelize.STRING
       },
-      image: {
+      cardNumber: {
         type: Sequelize.STRING
       },
-      type: {
+      address: {
         type: Sequelize.STRING
       },
-      datetime_local: {
-        type: Sequelize.DATE
-      },
-      venue: {
-        type: Sequelize.STRING
-      },
-      order_id: {
+      user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'order_id',
+        field: 'user_id',
         onDelete: 'CASCADE',
         references: {
-          model: 'orders',
+          model: 'users',
           key: 'id'
         }
       },
-      // isSoldOut: {
-      //   type: Sequelize.BOOLEAN
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -50,6 +41,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('events')
+    await queryInterface.dropTable('orders')
   }
 }

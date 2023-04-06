@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import { CreateOrder } from '../services/Order'
+//import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+//import { CreateOrder } from '../services/Order'
 
 const OrderForm = ({ user, event_id }) => {
+  let navigate = useNavigate()
   //console.log(user_id)
   //console.log(event_id)
   const initialState = {
@@ -17,26 +20,30 @@ const OrderForm = ({ user, event_id }) => {
     setOrderFormValues({ ...orderFormValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const token = localStorage.getItem('token')
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }
-    await CreateOrder(
-      {
-        event_id: event_id,
-        user_id: user.id,
-        name: orderFormValues.name,
-        cardNumber: orderFormValues.cardNumber,
-        address: orderFormValues.address
-      },
-      config
-    )
+  const handleSubmit = () => {
+    // e.preventDefault()
+    // const token = localStorage.getItem('token')
+    // const config = {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`
+    //   }
+    // }
+    navigate('/order-placed')
+    // await axios.post(
+    //   `/api/orders/user/${user.id}/event/${event_id}`,
+    //   //await CreateOrder(
+    //   {
+    //     event_id: event_id,
+    //     user_id: user.id,
+    //     name: orderFormValues.name,
+    //     cardNumber: orderFormValues.cardNumber,
+    //     address: orderFormValues.address
+    //   },
+    //   config
+    // )
     setOrderFormValues(initialState)
   }
+  //console.log(user.id)
 
   return (
     <div>
@@ -47,7 +54,7 @@ const OrderForm = ({ user, event_id }) => {
             name="name"
             type="text"
             value={orderFormValues.name}
-            placeholder="full name"
+            placeholder="Full Name"
             onChange={handleChange}
           ></input>
         </div>
@@ -67,7 +74,7 @@ const OrderForm = ({ user, event_id }) => {
             name="address"
             type="text"
             value={orderFormValues.address}
-            placeholder="address"
+            placeholder="Address"
             onChange={handleChange}
           ></input>
         </div>

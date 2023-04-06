@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { UserDetails } from '../services/Auth'
 import Cart from './Cart'
 
-const UserProfile = ({ user, checkToken }) => {
-  const [thisUser, setThisUser] = useState({})
+const UserProfile = ({
+  user,
+  checkToken
 
+  //getAllOrders = { getAllOrders }
+}) => {
+  const [thisUser, setThisUser] = useState({})
+  // const [userDetails, setUserDetails] = useState({})
+  // const [updated, setUpdated] = useState(false)
+  let navigate = useNavigate()
   let { user_id } = useParams()
 
   useEffect(() => {
@@ -16,17 +23,31 @@ const UserProfile = ({ user, checkToken }) => {
     }
     fetchDetails()
   }, [user])
-  // console.log(user)
+
+  const handleUpdate = () => {
+    navigate('/update-profile')
+  }
+
+  // const handleChange = () => {
+  //   setUserDetails({ ...userDetails, [e.target.id]: e.target.value })
+  // }
+
+  // const handleSubmit = async () => {
+  // await UpdateUser(user_id)
+  // setUserDetails({ ...userDetails })
+  // setUpdated(true)
+  // }
+
   if (user)
     return (
       <div>
         <h1>
           {thisUser?.firstName} {thisUser?.lastName}
         </h1>
+        <h2>{thisUser?.email}</h2>
+        {/* <h2>{thisUser?.password}</h2> */}
         <h2>{thisUser?.location}</h2>
-        <h2>
-          Orders <Cart />{' '}
-        </h2>
+        <button onClick={handleUpdate}>Update Profile</button>
       </div>
     )
 }

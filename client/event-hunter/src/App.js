@@ -11,6 +11,8 @@ import Login from './pages/Login'
 import SignIn from './pages/SignIn'
 import Sports from './components/Sports'
 import EventDetails from './pages/EventDetails'
+import OrderPlaced from './pages/OrderPlaced.js'
+import UpdateProfile from './pages/UpdateProfile'
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
@@ -42,7 +44,7 @@ const App = () => {
     let currentOrders = orders
     currentOrders.push(response.data.order)
     setOrders(currentOrders)
-    setNewOrder()
+    setNewOrder({ ...newOrder, events: [] })
     //{
     // user_id,
     // event_id}
@@ -57,7 +59,7 @@ const App = () => {
   }
 
   const addToCart = (event) => {
-    let newCart = cart
+    let newCart = [...cart, event]
     newCart.push(event)
     setCart(newCart)
     let eventArr = newOrder.events
@@ -137,7 +139,7 @@ const App = () => {
             }
           />
           <Route
-            path="sign-in"
+            path="/sign-in"
             element={
               <SignIn
                 showing={showing}
@@ -179,6 +181,11 @@ const App = () => {
           <Route
             path="/events/category/sports"
             element={<Sports showing={showing} setShowing={setShowing} />}
+          />
+          <Route path="/order-placed" element={<OrderPlaced user={user} />} />
+          <Route
+            path="/update-profile"
+            element={<UpdateProfile user={user} checkToken={checkToken} />}
           />
         </Routes>
       </main>

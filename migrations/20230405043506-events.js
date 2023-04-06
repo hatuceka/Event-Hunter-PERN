@@ -3,48 +3,38 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('orders', {
+    await queryInterface.createTable('events', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      // price: {
-      //   type: Sequelize.STRING
-      // },
-      // ticketCount: {
-      //   type: Sequelize.INTEGER
-      // },
-      name: {
+      title: {
         type: Sequelize.STRING
       },
-      cardNumber: {
+      image: {
         type: Sequelize.STRING
       },
-      address: {
+      type: {
         type: Sequelize.STRING
       },
-      user_id: {
+      datetime_local: {
+        type: Sequelize.DATE
+      },
+      venue: {
+        type: Sequelize.STRING
+      },
+      order_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'user_id',
+        field: 'order_id',
         onDelete: 'CASCADE',
         references: {
-          model: 'users',
+          model: 'orders',
           key: 'id'
         }
       },
-      // event_id: {
-      //   type: Sequelize.INTEGER,
-      //   allowNull: false,
-      //   field: 'event_id',
-      //   onDelete: 'CASCADE',
-      //   references: {
-      //     model: 'events',
-      //     key: 'id'
-      //   }
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -57,6 +47,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('orders')
+    await queryInterface.dropTable('events')
   }
 }
