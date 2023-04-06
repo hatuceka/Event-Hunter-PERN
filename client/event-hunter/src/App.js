@@ -112,7 +112,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav user={user} handleLogOut={handleLogOut} orderCount={orderCount} />
+        <Nav user={user} handleLogOut={handleLogOut} />
       </header>
 
       <main>
@@ -168,6 +168,7 @@ const App = () => {
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
                 user={user}
+                //orderCount={orderCount}
                 // event_id={event_id}
               />
             }
@@ -185,7 +186,7 @@ const App = () => {
           />
           <Route path="/order-placed" element={<OrderPlaced user={user} />} />
           <Route
-            path="/update-profile"
+            path="/update-profile/:user_id"
             element={<UpdateProfile user={user} checkToken={checkToken} />}
           />
         </Routes>

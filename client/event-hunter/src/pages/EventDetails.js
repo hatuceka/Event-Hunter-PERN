@@ -52,9 +52,8 @@ const EventDetails = ({ user, props, addToCart }) => {
           {eventDetails.venue.city} {eventDetails.venue.state}{' '}
           {eventDetails.venue.name}
         </h2>
-        <button onClick={() => addToCart(eventDetails)}>Add to Cart</button>
         {user ? (
-          <button>Go to Cart</button>
+          <button onClick={() => addToCart(eventDetails)}>Add to Cart</button>
         ) : (
           <h2>Go to LOGIN to buy tickets!</h2>
         )}

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 //import { CreateOrder } from '../services/Order'
 
-const OrderForm = ({ user, event_id }) => {
+const OrderForm = () => {
   let navigate = useNavigate()
   //console.log(user_id)
   //console.log(event_id)

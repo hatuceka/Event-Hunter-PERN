@@ -25,7 +25,7 @@ const UserProfile = ({
   }, [user])
 
   const handleUpdate = () => {
-    navigate('/update-profile')
+    navigate(`/update-profile/${user_id}`)
   }
 
   // const handleChange = () => {

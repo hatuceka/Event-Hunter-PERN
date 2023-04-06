@@ -72,7 +72,11 @@ const Cart = ({
           </div>
         ))}
       </div>
-      <button>{<OrderForm user={user} />}</button>
+      {cart.length !== 0 ? (
+        <button>{<OrderForm user={user} />}</button>
+      ) : (
+        <h1>Your cart is empty!</h1>
+      )}
     </div>
   )
 }
