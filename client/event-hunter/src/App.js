@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
 import UserProfile from './pages/UserProfile'
@@ -15,6 +15,7 @@ import OrderPlaced from './pages/OrderPlaced.js'
 import UpdateProfile from './pages/UpdateProfile'
 import DeleteProfile from './pages/DeleteProfile'
 import DeleteSuccess from './pages/DeleteSuccess'
+// import ChangePassword from './pages/ChangePassword'
 
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
@@ -88,10 +89,10 @@ const App = () => {
     getAllOrders()
   }, [])
 
-  const GetUsers = async () => {
-    const res = await axios.get(`${BASE_URL}/api/users`)
-    setAllUsers(res.data)
-  }
+  // const GetUsers = async () => {
+  //   const res = await axios.get(`${BASE_URL}/api/users`)
+  //   setAllUsers(res.data)
+  // }
 
   const handleLogOut = () => {
     setUser(null)
@@ -109,7 +110,7 @@ const App = () => {
     if (token) {
       checkToken()
     }
-    GetUsers()
+    // GetUsers()
   }, [])
 
   return (
@@ -203,6 +204,16 @@ const App = () => {
             }
           />
           <Route path="/delete-success" element={<DeleteSuccess />} />
+          {/* <Route
+            path="/change-password/:user_id"
+            element={
+              <ChangePassword
+                user={user}
+                checkToken={checkToken}
+                handleLogOut={handleLogOut}
+              />
+            }
+          /> */}
         </Routes>
       </main>
     </div>

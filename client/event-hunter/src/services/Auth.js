@@ -29,15 +29,15 @@ export const checkSession = async () => {
   }
 }
 
-export const UserDetails = async (user_id) => {
-  //let userId = parseInt(req.params.user_id)
-  try {
-    const res = await User.get(`/api/users/details/${user_id}`)
-    return res.data
-  } catch (error) {
-    throw error
-  }
-}
+// export const UserDetails = async (req) => {
+//   let userId = parseInt(req.params.user_id)
+//   try {
+//     const res = await User.get(`/api/users/details/${userId}`)
+//     return res.data
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 // export const UpdateUser = async (user_id, userDet) => {
 //   const res = await User.put(`/api/users/update_user/${user_id}`, userDetails)

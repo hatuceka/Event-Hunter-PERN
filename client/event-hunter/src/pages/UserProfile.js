@@ -2,26 +2,33 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { UserDetails } from '../services/Auth'
 import Cart from './Cart'
+import User from '../services/api'
 
-const UserProfile = ({
-  user,
-  checkToken
-
-  //getAllOrders = { getAllOrders }
-}) => {
+const UserProfile = ({ user, checkToken }) => {
+  //console.log(user)
   const [thisUser, setThisUser] = useState({})
-  // const [userDetails, setUserDetails] = useState({})
+  //const [userDetails, setUserDetails] = useState({})
   // const [updated, setUpdated] = useState(false)
   let navigate = useNavigate()
   let { user_id } = useParams()
 
+  const UserDetails = async () => {
+    // let userId = parseInt(req.params.user_id)
+
+    const res = await User.get(`/api/users/details/${user.id}`)
+    console.log(res.data)
+    setThisUser(res.data)
+  }
+
   useEffect(() => {
-    checkToken()
-    const fetchDetails = async () => {
-      let details = await UserDetails(user.id)
-      setThisUser(details)
+    //checkToken()
+    //const fetchDetails = async () => {
+    if (user) {
+      UserDetails()
     }
-    fetchDetails()
+    //setThisUser(details)
+    // }
+    //fetchDetails()
   }, [user])
 
   const handleUpdate = () => {
@@ -31,6 +38,10 @@ const UserProfile = ({
   const handleDelete = () => {
     navigate(`/delete-profile/${user_id}`)
   }
+
+  // const handlePassword = () => {
+  //   navigate(`/change-password/${user_id}`)
+  // }
 
   // const handleChange = () => {
   //   setUserDetails({ ...userDetails, [e.target.id]: e.target.value })
@@ -52,6 +63,7 @@ const UserProfile = ({
         {/* <h2>{thisUser?.password}</h2> */}
         <h2>{thisUser?.location}</h2>
         <button onClick={handleUpdate}>Update Account</button>
+        {/* <button onClick={handlePassword}>Change Password</button> */}
         <button onClick={handleDelete}>Delete Account</button>
       </div>
     )
