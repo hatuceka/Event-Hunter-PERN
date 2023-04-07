@@ -2,7 +2,13 @@ import User from '../services/api'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-const DeleteProfile = ({ user, userDetails, setUserDetails, handleLogOut }) => {
+const DeleteProfile = ({
+  user,
+  setUser,
+  userDetails,
+  setUserDetails,
+  handleLogOut
+}) => {
   let navigate = useNavigate()
 
   const deleteAccount = async (user_id) => {
@@ -13,8 +19,10 @@ const DeleteProfile = ({ user, userDetails, setUserDetails, handleLogOut }) => {
     localStorage.setItem('token', res.data.token)
     localStorage.setItem('userId', res.data.user_id)
     //setUserDetails({ ...userDetails })
-    navigate('/sign-in')
+    //navigate('/delete-success')
     handleLogOut(user_id)
+    // setUser(null)
+    // localStorage.clear()
   }
 
   return (

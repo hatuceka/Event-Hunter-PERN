@@ -5,6 +5,7 @@ import { GetEventById, CreateEvent, FindEventFromDb } from '../services/Event'
 import { CreateOrder } from '../services/Order'
 import Cart from './Cart'
 import Login from './Login'
+import { Link } from 'react-router-dom'
 
 const EventDetails = ({ user, props, addToCart }) => {
   const [eventDetails, setEventDetails] = useState({})
@@ -52,6 +53,8 @@ const EventDetails = ({ user, props, addToCart }) => {
           {eventDetails.venue.city} {eventDetails.venue.state}{' '}
           {eventDetails.venue.name}
         </h2>
+        <Link to="/">Go back to hunt events</Link>
+
         {user ? (
           <button onClick={() => addToCart(eventDetails)}>Add to Cart</button>
         ) : (

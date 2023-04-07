@@ -12,7 +12,7 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
     <header>
       <div className="navSection">
         {/* Always display these nav links */}
-        <NavLink to="/cart">Cart {orderCount} </NavLink>
+        <NavLink to="/cart">Cart </NavLink>
 
         <NavLink to="/about">About</NavLink>
         <NavLink to="/">Home</NavLink>

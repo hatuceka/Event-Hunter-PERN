@@ -14,6 +14,8 @@ import EventDetails from './pages/EventDetails'
 import OrderPlaced from './pages/OrderPlaced.js'
 import UpdateProfile from './pages/UpdateProfile'
 import DeleteProfile from './pages/DeleteProfile'
+import DeleteSuccess from './pages/DeleteSuccess'
+
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
@@ -200,6 +202,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/delete-success" element={<DeleteSuccess />} />
         </Routes>
       </main>
     </div>
