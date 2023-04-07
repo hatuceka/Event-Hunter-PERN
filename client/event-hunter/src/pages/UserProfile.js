@@ -28,6 +28,10 @@ const UserProfile = ({
     navigate(`/update-profile/${user_id}`)
   }
 
+  const handleDelete = () => {
+    navigate(`/delete-profile/${user_id}`)
+  }
+
   // const handleChange = () => {
   //   setUserDetails({ ...userDetails, [e.target.id]: e.target.value })
   // }
@@ -47,7 +51,8 @@ const UserProfile = ({
         <h2>{thisUser?.email}</h2>
         {/* <h2>{thisUser?.password}</h2> */}
         <h2>{thisUser?.location}</h2>
-        <button onClick={handleUpdate}>Update Profile</button>
+        <button onClick={handleUpdate}>Update Account</button>
+        <button onClick={handleDelete}>Delete Account</button>
       </div>
     )
 }

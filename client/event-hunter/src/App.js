@@ -13,6 +13,7 @@ import Sports from './components/Sports'
 import EventDetails from './pages/EventDetails'
 import OrderPlaced from './pages/OrderPlaced.js'
 import UpdateProfile from './pages/UpdateProfile'
+import DeleteProfile from './pages/DeleteProfile'
 import Nav from './components/Nav'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
@@ -33,7 +34,7 @@ const App = () => {
   })
   const [events, setEvents] = useState([])
   const [showing, setShowing] = useState(false)
-  const [orderCount, setOrderCount] = useState(cart.length)
+  //const [orderCount, setOrderCount] = useState(cart.length)
 
   const addOrder = async (e) => {
     e.preventDefault()
@@ -68,7 +69,7 @@ const App = () => {
     eventArr.push(event.id)
 
     setNewOrder({ ...newOrder, events: eventArr })
-    setOrderCount(cart.length + 1)
+    //setOrderCount(cart.length + 1)
   }
 
   const getAllOrders = async () => {
@@ -112,7 +113,7 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <Nav user={user} handleLogOut={handleLogOut} orderCount={orderCount} />
+        <Nav user={user} handleLogOut={handleLogOut} />
       </header>
 
       <main>
@@ -168,7 +169,7 @@ const App = () => {
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
                 user={user}
-                orderCount={orderCount}
+                //orderCount={orderCount}
                 // event_id={event_id}
               />
             }
@@ -188,6 +189,16 @@ const App = () => {
           <Route
             path="/update-profile/:user_id"
             element={<UpdateProfile user={user} checkToken={checkToken} />}
+          />
+          <Route
+            path="/delete-profile/:user_id"
+            element={
+              <DeleteProfile
+                user={user}
+                checkToken={checkToken}
+                handleLogOut={handleLogOut}
+              />
+            }
           />
         </Routes>
       </main>

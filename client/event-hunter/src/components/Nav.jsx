@@ -12,6 +12,8 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
     <header>
       <div className="navSection">
         {/* Always display these nav links */}
+        <NavLink to="/cart">Cart {orderCount} </NavLink>
+
         <NavLink to="/about">About</NavLink>
         <NavLink to="/">Home</NavLink>
 
@@ -19,13 +21,12 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
           // Display these nav links only if there is a logged-in user
           <>
             <NavLink to={`/user-profile/${user.userId}`}>User Profile</NavLink>
-            <NavLink to="/cart">Cart {orderCount} </NavLink>
             <button onClick={handleLogOut}>Logout</button>
           </>
         ) : (
           // Display these nav links only if there is no logged-in user
           <>
-            <NavLink to="/sign-in">SignIn</NavLink>
+            <NavLink to="/sign-in">Login</NavLink>
           </>
         )}
 
