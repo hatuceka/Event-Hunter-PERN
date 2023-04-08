@@ -7,7 +7,7 @@ Router.post('/create-event', controller.CreateEvent)
 Router.get('/event/:event_id', controller.GetEventById)
 Router.get('/sort-by-date', controller.SortEventsByDate)
 Router.get('/city/:location', controller.FindEventsByCity)
-Router.get('/category/sports', controller.FindEventsByCategory)
+//Router.get('/category/:SPORTS', controller.FindEventsByCategory)
 Router.get('/search/:search', controller.SearchEvents)
 Router.get('/from-database/:event_id', controller.FindEventFromDb)
 

@@ -3,12 +3,9 @@ import { SearchEvents } from '../services/Event'
 import SearchBar from '../components/SearchBar'
 import { useEffect, useState } from 'react'
 import EventCard from '../components/EventCard'
-//import { useLocation } from 'react-router-dom'
+import Sports from '../components/Sports'
 
 const Home = () => {
-  //const location = useLocation()
-
-  // const { query } = location.state
   const [eventList, setEventList] = useState()
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
@@ -68,7 +65,6 @@ const Home = () => {
       )}
       {searchResults.length > 0 && (
         <div className="eventList">
-          {/* <h1 className="result">Search Results</h1> */}
           <div className="container">
             {searchResults.map((event) => (
               <EventCard event={event} key={event.id} />

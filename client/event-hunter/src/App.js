@@ -181,10 +181,10 @@ const App = () => {
             }
           />
 
-          <Route
-            path="/events/category/sports"
+          {/* <Route
+            path="/events/category/"
             element={<Sports showing={showing} setShowing={setShowing} />}
-          />
+          /> */}
           <Route path="/order-placed" element={<OrderPlaced user={user} />} />
           <Route
             path="/update-profile/:user_id"

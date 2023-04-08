@@ -1,6 +1,6 @@
 # Event-Hunter-PERN
 
-![Image](event.png)
+![Image](eventhome.png)
 
 ## **_Table of Contents:_**
 
@@ -13,9 +13,9 @@
 
 [Trello Board](https://trello.com/b/4TDr5Px9/event-hunter)
 
-[Entity Relationship Diagram](https://drive.google.com/drive/u/0/my-drive)
+[Entity Relationship Diagram](https://drive.google.com/file/d/1mJaOjlVm1Tikqp37YE9Tc4qG_zQpGcu1/view?usp=sharing)
 
-[Component Hierarchy Diagram](https://lucid.app/lucidchart/3b28251c-faba-4220-a3e0-612451f15d9b/edit?beaconFlowId=770542B939E5BEE3&invitationId=inv_97f7800a-062a-4e0a-b619-2eb0b64ee92d&page=0_0#)
+[Component Hierarchy Diagram](https://lucid.app/lucidchart/3b28251c-faba-4220-a3e0-612451f15d9b/edit?viewport_loc=-11%2C-72%2C1879%2C1279%2C0_0&invitationId=inv_97f7800a-062a-4e0a-b619-2eb0b64ee92d)
 
 ---
 
@@ -29,14 +29,14 @@
 
 ### **_Motivation_**
 
-My motivation for this capstone project was to show my best programming skills as building an event tracker website. While using my existing knowledge of React, Express, JavaScript, PostgreSQL; I integrate other useful technologies like API, UI libraries, user authentication methods.
+My motivation for this capstone project was to show my best programming skills as building an event tracker website. While using my existing knowledge of React, Express, JavaScript, PostgreSQL; I integrate other useful technologies like API, user authentication methods.
 I accomplished this after only 11 weeks of instruction enrolled in General Assembly's Software Engineering Immersive program.
 
 ---
 
 ### **_Description:_**
 
-Event Hunter is a PERN stack application provides event tracking. Users can sign up/login, search events by filtering, show event details and buy tickets on this platform. Events pops up in different categories using an external API.
+Event Hunter is a PERN stack application provides event tracking. Users can sign up/login, search events, show event details and give orders to join the most popular events on this platform. Events pops up using an external API (SeatGeek). It has full CRUD operations for user.
 
 ---
 
@@ -51,16 +51,15 @@ Event Hunter is a PERN stack application provides event tracking. Users can sign
 - Node.js
 - PostgreSQL
 - External API
-- UI library
 
 ---
 
 ### **_Future Updates_**
 
-1. Past events category
-2. Data visualization options
-3. Event Review option
-4. Make an 'event reminder list'
+1. Getting events by categories
+2. Adding event options for users
+3. Getting events by user's location
+4. Improved payment page
 
 ---
 
@@ -73,4 +72,4 @@ Event Hunter is a PERN stack application provides event tracking. Users can sign
 - Google Fonts
 - LucidApp
 - draw.io
-- seatgeek.com
+- [SEAT GEEK](https://platform.seatgeek.com/#events)

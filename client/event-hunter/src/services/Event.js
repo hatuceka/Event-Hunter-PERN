@@ -55,10 +55,10 @@ export const FindEventsByCity = async (location) => {
   }
 }
 
-export const findEventsByCategory = async () => {
+export const findEventsByCategory = async (SPORTS) => {
   try {
     //const { type } = req.params
-    const response = await User.get(`/api/events/category/sports`)
+    const response = await User.get(`/api/events/category/${SPORTS}`)
     return response
   } catch (error) {
     throw error
