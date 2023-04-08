@@ -57,7 +57,7 @@ const Home = () => {
         <div>
           <div className="eventList">
             {eventList && (
-              <div>
+              <div className="container">
                 {eventList.map((event) => (
                   <EventCard event={event} key={event.id} />
                 ))}
@@ -69,7 +69,7 @@ const Home = () => {
       {searchResults.length > 0 && (
         <div>
           <h1 className="result">Search Results</h1>
-          <div className="container">
+          <div className="eventList">
             {searchResults.map((event) => (
               <EventCard event={event} key={event.id} />
             ))}

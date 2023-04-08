@@ -1,7 +1,7 @@
 const SearchBar = (props) => {
   return (
     <div className="searching">
-      <form className="searchDiv" onSubmit={props.onSubmit}>
+      <form className="searchForm" onSubmit={props.onSubmit}>
         <div className="searchDiv">
           <input
             className="searchInput"

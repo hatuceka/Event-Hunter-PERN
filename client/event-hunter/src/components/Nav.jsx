@@ -1,3 +1,4 @@
+import '../style/nav.css'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -12,25 +13,37 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
     <header>
       <div className="navSection">
         {/* Always display these nav links */}
-        <NavLink to="/cart">Cart </NavLink>
+        <NavLink className="navlink" to="/cart">
+          Cart{' '}
+        </NavLink>
 
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="navlink" to="/about">
+          About
+        </NavLink>
+        <NavLink className="navlink" to="/">
+          Home
+        </NavLink>
 
         {user ? (
           // Display these nav links only if there is a logged-in user
           <>
-            <NavLink to={`/user-profile/${user.userId}`}>User Profile</NavLink>
-            <button onClick={handleLogOut}>Logout</button>
+            <NavLink className="navlink" to={`/user-profile/${user.userId}`}>
+              User Profile
+            </NavLink>
+            <NavLink className="navlink" onClick={handleLogOut}>
+              Logout
+            </NavLink>
           </>
         ) : (
           // Display these nav links only if there is no logged-in user
           <>
-            <NavLink to="/sign-in">Login</NavLink>
+            <NavLink className="navlink" to="/sign-in">
+              Login
+            </NavLink>
           </>
         )}
 
-        <div className="dropdown">
+        {/* <div className="dropdown">
           <button className="dropbtn" onClick={toggleCategories}>
             Categories
             <i className="fa fa-caret-down"></i>
@@ -41,8 +54,8 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
               <NavLink to="/events/category/sports">Sports</NavLink>
               <NavLink to="/category/theater">Theater</NavLink>
             </div>
-          )}
-        </div>
+          )} */}
+        {/* </div> */}
       </div>
     </header>
   )

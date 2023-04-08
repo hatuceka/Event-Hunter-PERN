@@ -1,3 +1,4 @@
+import '../style/cart.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -62,22 +63,22 @@ const Cart = ({
   // }, [])
 
   return (
-    <div>
+    <div className="cartBody">
       <div className="eventsInCart">
         {cart.map((event) => (
           <div key={event.id}>
             {<EventCard event={event} />}
             <br></br>
-            <button onClick={() => handleDelete(event.id)}>
+            <button className="delete" onClick={() => handleDelete(event.id)}>
               <FontAwesomeIcon icon={faTrash} /> Delete
             </button>
           </div>
         ))}
       </div>
       {cart.length !== 0 ? (
-        <button>{<OrderForm user={user} />}</button>
+        <button className="orderBtn">{<OrderForm user={user} />}</button>
       ) : (
-        <h1>Your cart is empty!</h1>
+        <h1 className="empty">Your cart is empty!</h1>
       )}
     </div>
   )

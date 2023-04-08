@@ -1,0 +1,15 @@
+.navSection {
+  background-color: rgba(255, 234, 0, 0.467);
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.navlink {
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+}

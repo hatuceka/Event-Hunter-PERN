@@ -1,13 +1,17 @@
+import '../style/home.css'
+
 import { Link } from 'react-router-dom'
 
 const EventCard = ({ event }) => {
   return (
-    <Link to={`events/${event.id}`}>
-      <div>
-        <p>{event.title}</p>
-      </div>
-      <img src={event.performers[0].image} />
-    </Link>
+    <div classsName="card">
+      <Link className="titleLink" to={`events/${event.id}`}>
+        <div>
+          <p className="eventTitle">{event.title}</p>
+        </div>
+        <img className="eventImg" src={event.performers[0].image} />
+      </Link>
+    </div>
   )
 }
 

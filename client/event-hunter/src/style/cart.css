@@ -1,0 +1,57 @@
+.cartBody {
+  /* background-color: rgba(255, 234, 0, 0.15); */
+  height: 1000px;
+}
+
+.empty {
+  margin: 300px auto;
+  color: rgba(81, 0, 255, 0.874);
+  font-size: 35px;
+}
+
+.orderDiv {
+  margin: 20px 10px 20px 10px;
+  /* border: 1px solid rgba(81, 0, 255, 0.874); */
+  border-radius: 5px;
+}
+
+.orderBtn {
+  margin-top: 50px;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  border-radius: 5px;
+background-color: rgba(255, 234, 0, 0.021);
+}
+
+.input {
+  border: 2px solid rgba(81, 0, 255, 0.874);
+margin: 5px;
+border-radius: 5px;
+background-color: rgba(81, 0, 255, 0.051);
+
+/* background-color: rgba(250, 240, 129, 0.021); */
+}
+.place {
+  margin-top: 20px;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+}
+
+.delete {
+ 
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+}

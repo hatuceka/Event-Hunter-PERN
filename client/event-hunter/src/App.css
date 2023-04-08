@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgba(255, 234, 0, 0.15);
 }
 
 .App-logo {
@@ -37,14 +38,7 @@
   }
 }
 
-.navSection{
-  background-color: rgba(0, 170, 170, 0.504);
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
- 
-}
+
 
 /* .updateForm {
 display: flex;

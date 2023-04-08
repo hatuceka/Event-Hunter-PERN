@@ -46,7 +46,7 @@ const OrderForm = () => {
   //console.log(user.id)
 
   return (
-    <div>
+    <div className="orderDiv">
       <form className="oderForm" onSubmit={handleSubmit}>
         <div>
           <input
@@ -78,7 +78,7 @@ const OrderForm = () => {
             onChange={handleChange}
           ></input>
         </div>
-        <button className="submit" type="submit">
+        <button className="place" type="submit">
           Place Order
         </button>
       </form>
