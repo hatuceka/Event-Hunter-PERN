@@ -1,0 +1,57 @@
+.userInfo {
+  
+    width: 400px;
+    margin: 100px auto 50px auto;
+
+  /* border: 5px solid red; */
+}
+
+.profileBtns {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+.delProfile {
+
+}
+
+.delAccount {
+  margin-top: 50px;
+  color: rgba(81, 0, 255, 0.874);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.link {
+  margin-top: 50px;
+}
+
+.goBackDel {
+  
+  width: 200px;
+  /* margin-top: 100px; */
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+
+}
+
+.or {
+  margin-top: 50px;
+  color: rgba(61, 0, 193, 0.874);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* .placed {
+  margin: 100px auto;
+  color: rgba(81, 0, 255, 0.874);
+  font-size: 35px;
+} */

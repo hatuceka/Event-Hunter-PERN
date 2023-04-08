@@ -45,10 +45,10 @@ const Home = () => {
     <div>
       <SearchBar onSubmit={onSubmit} value={search} onChange={handleChange} />
       {searched && searchResults.length === 0 && (
-        <div>
-          <p className="noResult">There is no matching result</p>
+        <div className="cartBody">
+          <p className="noResult">There is no matching result!</p>
           <button className="goBack" onClick={handleBack}>
-            Back to Home
+            Go Back to Hunt Events
           </button>
         </div>
       )}
@@ -67,9 +67,9 @@ const Home = () => {
         </div>
       )}
       {searchResults.length > 0 && (
-        <div>
-          <h1 className="result">Search Results</h1>
-          <div className="eventList">
+        <div className="eventList">
+          {/* <h1 className="result">Search Results</h1> */}
+          <div className="container">
             {searchResults.map((event) => (
               <EventCard event={event} key={event.id} />
             ))}

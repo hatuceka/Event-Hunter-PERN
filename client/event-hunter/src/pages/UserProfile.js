@@ -1,3 +1,4 @@
+import '../style/profile.css'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { UserDetails } from '../services/Auth'
@@ -55,16 +56,29 @@ const UserProfile = ({ user, checkToken }) => {
 
   if (user)
     return (
-      <div>
-        <h1>
-          {thisUser?.firstName} {thisUser?.lastName}
-        </h1>
-        <h2>{thisUser?.email}</h2>
-        {/* <h2>{thisUser?.password}</h2> */}
-        <h2>{thisUser?.location}</h2>
-        <button onClick={handleUpdate}>Update Account</button>
-        {/* <button onClick={handlePassword}>Change Password</button> */}
-        <button onClick={handleDelete}>Delete Account</button>
+      <div className="cartBody">
+        <div className="userInfo">
+          <h1 className="detailTitle">
+            <span className="span">Name:</span> {thisUser?.firstName}{' '}
+            {thisUser?.lastName}
+          </h1>
+          <h2 className="detailTitle">
+            <span className="span">Email:</span> {thisUser?.email}
+          </h2>
+          {/* <h2>{thisUser?.password}</h2> */}
+          <h2 className="detailTitle">
+            <span className="span">Address:</span> {thisUser?.location}
+          </h2>
+        </div>
+        <div className="profileBtns">
+          <button className="place" onClick={handleUpdate}>
+            Update Account
+          </button>
+          {/* <button onClick={handlePassword}>Change Password</button> */}
+          <button className="place" onClick={handleDelete}>
+            Delete Account
+          </button>
+        </div>
       </div>
     )
 }

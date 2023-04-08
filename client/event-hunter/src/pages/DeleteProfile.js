@@ -26,10 +26,21 @@ const DeleteProfile = ({
   }
 
   return (
-    <div>
-      <button onClick={() => deleteAccount()}>Delete Permanently</button>
-      <h4>If you are not sure to delete your account</h4>
-      <Link to="/">Go back to hunt events</Link>
+    <div className="cartBody">
+      <div className="all">
+        <button className="place" onClick={() => deleteAccount()}>
+          Delete Permanently
+        </button>
+        <h3 className="or">OR</h3>
+        <h4 className="delAccount">
+          If you are not sure to delete your account,
+        </h4>
+        <div className="link">
+          <Link className="goBackDel" to="/">
+            Go back to hunt events
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

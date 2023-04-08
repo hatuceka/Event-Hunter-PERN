@@ -30,35 +30,39 @@ const UpdateProfile = ({ user, firstName, lastName, email, location }) => {
 
   return (
     <div className="updateForm">
-      <form onSubmit={(e) => handleSubmit(e, user.id)}>
-        <div>
-          <input
-            type="text"
-            id="firstName"
-            onChange={handleChange}
-            value={userDetails.firstName}
-            placeholder="First Name"
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            id="lastName"
-            onChange={handleChange}
-            value={userDetails.lastName}
-            placeholder="Last Name"
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            id="email"
-            onChange={handleChange}
-            value={userDetails.email}
-            placeholder="Email"
-          />
-        </div>
-        {/* <div>
+      <form className="col" onSubmit={(e) => handleSubmit(e, user.id)}>
+        <div className="all">
+          <div>
+            <input
+              className="reg"
+              type="text"
+              id="firstName"
+              onChange={handleChange}
+              value={userDetails.firstName}
+              placeholder="First Name"
+            />
+          </div>
+          <div>
+            <input
+              className="reg"
+              type="text"
+              id="lastName"
+              onChange={handleChange}
+              value={userDetails.lastName}
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
+            <input
+              className="reg"
+              type="email"
+              id="email"
+              onChange={handleChange}
+              value={userDetails.email}
+              placeholder="Email"
+            />
+          </div>
+          {/* <div>
           <input
             type="password"
             id="password"
@@ -67,16 +71,20 @@ const UpdateProfile = ({ user, firstName, lastName, email, location }) => {
             placeholder="Password"
           />
         </div> */}
-        <div>
-          <input
-            type="text"
-            id="location"
-            onChange={handleChange}
-            value={userDetails.location}
-            placeholder="Address"
-          />
+          <div>
+            <input
+              className="reg"
+              type="text"
+              id="location"
+              onChange={handleChange}
+              value={userDetails.location}
+              placeholder="Address"
+            />
+          </div>
+          <button className="place" type="submit">
+            Update
+          </button>
         </div>
-        <button type="submit">Update</button>
       </form>
     </div>
   )
