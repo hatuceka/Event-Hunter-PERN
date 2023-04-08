@@ -40,6 +40,8 @@ Event Hunter is a PERN stack application provides event tracking. Users can sign
 
 ---
 
+## ![Image](cart.png)
+
 ### **_Technologies Used_**
 
 - [TRELLO Board](https://trello.com/b/DQ0A8xV5/patientpathway)

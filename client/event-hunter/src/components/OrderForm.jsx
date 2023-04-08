@@ -1,12 +1,9 @@
 import { useState } from 'react'
-//import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-//import { CreateOrder } from '../services/Order'
 
-const OrderForm = () => {
+const OrderForm = ({ setCart }) => {
   let navigate = useNavigate()
-  //console.log(user_id)
-  //console.log(event_id)
+
   const initialState = {
     name: '',
     cardNumber: '',
@@ -21,29 +18,10 @@ const OrderForm = () => {
   }
 
   const handleSubmit = () => {
-    // e.preventDefault()
-    // const token = localStorage.getItem('token')
-    // const config = {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`
-    //   }
-    // }
     navigate('/order-placed')
-    // await axios.post(
-    //   `/api/orders/user/${user.id}/event/${event_id}`,
-    //   //await CreateOrder(
-    //   {
-    //     event_id: event_id,
-    //     user_id: user.id,
-    //     name: orderFormValues.name,
-    //     cardNumber: orderFormValues.cardNumber,
-    //     address: orderFormValues.address
-    //   },
-    //   config
-    // )
+    setCart([])
     setOrderFormValues(initialState)
   }
-  //console.log(user.id)
 
   return (
     <div className="orderDiv">

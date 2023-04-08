@@ -56,7 +56,7 @@ const App = () => {
 
   const addToCart = (event) => {
     let newCart = cart
-    //[...cart, event]
+
     newCart.push(event)
     setCart(newCart)
     let eventArr = newOrder.events
@@ -86,11 +86,6 @@ const App = () => {
     getAllOrders()
   }, [])
 
-  // const GetUsers = async () => {
-  //   const res = await axios.get(`${BASE_URL}/api/users`)
-  //   setAllUsers(res.data)
-  // }
-
   const handleLogOut = () => {
     setUser(null)
     localStorage.clear()
@@ -107,7 +102,6 @@ const App = () => {
     if (token) {
       checkToken()
     }
-    // GetUsers()
   }, [])
 
   return (
@@ -185,6 +179,7 @@ const App = () => {
             path="/events/category/"
             element={<Sports showing={showing} setShowing={setShowing} />}
           /> */}
+
           <Route path="/order-placed" element={<OrderPlaced user={user} />} />
           <Route
             path="/update-profile/:user_id"

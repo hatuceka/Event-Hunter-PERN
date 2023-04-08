@@ -10,35 +10,14 @@ import { Link } from 'react-router-dom'
 
 const EventDetails = ({ user, props, addToCart }) => {
   const [eventDetails, setEventDetails] = useState({})
-  //const [event_id, setEventId] = useState('')
-  // const [clicked, setClicked] = useState(false)
 
   let { event_id } = useParams()
-  // const addToCart = async () => {
-  //   await CreateOrder(user.id, event_id)
-  //console.log(user.id)
-  //setClicked(true)
-  //  }
-
-  //let { event_id } = useParams()
-  //let event = FindEventFromDb(event_id)
-  // event.id = parseInt(event_id)
 
   useEffect(() => {
     const fetchDetails = async () => {
       let details = await GetEventById(event_id)
-      //   let eventInDb = await FindEventFromDb(event_id)
+
       setEventDetails(details.data)
-      //   if (!eventInDb) {
-      //     await CreateEvent({
-      //       id: details.event_id,
-      //       title: details.title,
-      //       image: details.performers[0].image,
-      //       type: details.type,
-      //       datetime_local: details.datetime_local,
-      //       venue: details.venue.name
-      //     })
-      //   }
     }
     fetchDetails()
   }, [event_id])

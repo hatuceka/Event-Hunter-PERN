@@ -12,17 +12,11 @@ const DeleteProfile = ({
   let navigate = useNavigate()
 
   const deleteAccount = async (user_id) => {
-    const res = await User.delete(
-      `/api/users/delete/${user.id}`
-      //userDetails
-    )
+    const res = await User.delete(`/api/users/delete/${user.id}`)
     localStorage.setItem('token', res.data.token)
     localStorage.setItem('userId', res.data.user_id)
-    //setUserDetails({ ...userDetails })
-    //navigate('/delete-success')
+
     handleLogOut(user_id)
-    // setUser(null)
-    // localStorage.clear()
   }
 
   return (

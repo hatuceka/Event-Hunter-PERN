@@ -20,11 +20,10 @@ const UpdateProfile = ({ user, firstName, lastName, email, location }) => {
   const handleSubmit = async (e, user_id) => {
     e.preventDefault()
     await User.put(`/api/users/update_user/${user_id}`, userDetails)
-    // localStorage.setItem('token', res.data.token)
-    // localStorage.setItem('userId', res.data.user_id)
+
     setUserDetails({ ...userDetails })
     setUpdated(true)
-    //window.location.reload(false)
+
     navigate(`/user-profile/${user_id}`)
   }
 

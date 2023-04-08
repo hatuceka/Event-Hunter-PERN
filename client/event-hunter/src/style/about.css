@@ -1,9 +1,14 @@
 .about {
   width: 600px;
-  /* border: 2px solid red; */
-margin: 50px auto;
+margin: 100px auto;
 line-height: 1.5;
-font-size: 16px;
+font-size: 20px;
 color: rgba(81, 0, 255, 0.769);
 font-weight: bold;
+}
+
+.eventHunter {
+  font-size: 40px;
+  font-family: 'Inspiration', cursive;
+  font-weight: 900;
 }

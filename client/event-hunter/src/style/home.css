@@ -19,15 +19,10 @@ width: 300px;
 
 .container {
   margin-top: 100px;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
+  
   overflow-x: scroll;
   white-space: nowrap;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 3em;
-  justify-content: center; */
+ 
 }
 
 
@@ -43,7 +38,7 @@ width: 300px;
   justify-content: flex-end;
   border: none;
   margin-top: 30px;
-  /* margin-right: 10px; */
+  
 }
 
 .searchForm {
@@ -100,16 +95,9 @@ font-weight: bold;
 .card {
   transition: transform 0.2s, opacity 0.2s;
   display: inline-block;
-  /* width: 100px;
-  height: 100px; */
+  
   margin: 10px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-  width: 150px;
-  padding: 10px;
-  z-index: 1; */
+  
 }
 
 .card:hover {

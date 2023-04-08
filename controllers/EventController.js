@@ -1,5 +1,5 @@
 const { Event } = require('../models')
-//const { Op } = require('sequelize')
+
 const axios = require('axios')
 require('dotenv').config()
 const CLIENT_ID = process.env.CLIENT_ID
@@ -20,7 +20,7 @@ const CreateEvent = async (req, res) => {
 const FindEventFromDb = async (req, res) => {
   try {
     const event = await Event.findByPk(req.params.event_id)
-    // console.log(event)
+
     if (event) {
       return res.json(event)
     } else {
