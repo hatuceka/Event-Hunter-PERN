@@ -2,7 +2,9 @@
   background-color: rgba(255, 234, 0, 0.467);
   padding: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: flex-end; */
   gap: 30px;
 }
 
@@ -12,4 +14,14 @@
   font-size: 20px;
   font-family: 'Rubik', sans-serif;
   text-decoration: none;
+  margin: 0 10px;
+
+}
+
+.navlink:first-child {
+  margin-right: auto;
+  font-size: 20px;
+  font-family: 'Inspiration', cursive;
+  font-weight: 900;
+
 }

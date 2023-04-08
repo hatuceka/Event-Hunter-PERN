@@ -13,15 +13,15 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
     <header>
       <div className="navSection">
         {/* Always display these nav links */}
+        <NavLink className="navlink" to="/">
+          EventHunter
+        </NavLink>
         <NavLink className="navlink" to="/cart">
           Cart{' '}
         </NavLink>
 
         <NavLink className="navlink" to="/about">
           About
-        </NavLink>
-        <NavLink className="navlink" to="/">
-          Home
         </NavLink>
 
         {user ? (

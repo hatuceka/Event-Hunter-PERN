@@ -42,7 +42,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className="cartBody">
       <SearchBar onSubmit={onSubmit} value={search} onChange={handleChange} />
       {searched && searchResults.length === 0 && (
         <div className="cartBody">
@@ -52,7 +52,7 @@ const Home = () => {
           </button>
         </div>
       )}
-
+      <h2 className="top">Top Events</h2>
       {!searched && (
         <div>
           <div className="eventList">

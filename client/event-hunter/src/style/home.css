@@ -1,7 +1,8 @@
 .titleLink {
-
   text-decoration: none;
 }
+
+
 
 .eventTitle {
   color: rgba(81, 0, 255, 0.874);
@@ -10,18 +11,26 @@
 }
 
 .eventImg {
-
+height: 300px;
+width: 300px;
   border: 2px solid rgba(81, 0, 255, 0.874);
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .container {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1em;
-  justify-content: center;
+  margin-top: 100px;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  overflow-x: scroll;
+  white-space: nowrap;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 3em;
+  justify-content: center; */
 }
+
+
 
 
 .searching {
@@ -86,4 +95,31 @@ font-weight: bold;
   font-family: 'Rubik', sans-serif;
   font-weight: bold;
   font-size: 1.3em;
+}
+
+.card {
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-block;
+  /* width: 100px;
+  height: 100px; */
+  margin: 10px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  width: 150px;
+  padding: 10px;
+  z-index: 1; */
+}
+
+.card:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.top {
+  margin : 50px auto;
+  color: rgba(81, 0, 255, 0.874);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
 }
