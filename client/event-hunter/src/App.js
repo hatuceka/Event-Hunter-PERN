@@ -31,13 +31,10 @@ const App = () => {
   const [orders, setOrders] = useState([])
   const [cart, setCart] = useState([])
   const [newOrder, setNewOrder] = useState({
-    // user_id,
-    // event_id
     events: []
   })
   const [events, setEvents] = useState([])
   const [showing, setShowing] = useState(false)
-  //const [orderCount, setOrderCount] = useState(cart.length)
 
   const addOrder = async (e) => {
     e.preventDefault()
@@ -49,14 +46,9 @@ const App = () => {
     currentOrders.push(response.data.order)
     setOrders(currentOrders)
     setNewOrder({ ...newOrder, events: [] })
-    //{
-    // user_id,
-    // event_id}
+
     setCart([])
   }
-
-  // let event_id = event_id
-  // let user_id = user_id
 
   const handleChange = (e) => {
     setNewOrder({ ...newOrder, [e.target.id]: e.target.value })
@@ -72,12 +64,17 @@ const App = () => {
     eventArr.push(event.id)
 
     setNewOrder({ ...newOrder, events: eventArr })
-    //setOrderCount(cart.length + 1)
   }
 
   const getAllOrders = async () => {
     const res = await axios.get('http://localhost:3001/api/orders')
     setOrders(res.data.orders)
+  }
+
+  const handleDelete = (orderId) => {
+    const updatedCart = cart.filter((order) => order.id !== orderId)
+
+    setCart(updatedCart)
   }
 
   useEffect(() => {
@@ -163,6 +160,8 @@ const App = () => {
             element={
               <Cart
                 handleChange={handleChange}
+                handleDelete={handleDelete}
+                addToCart={addToCart}
                 addOrder={addOrder}
                 newOrder={newOrder}
                 cart={cart}
@@ -172,8 +171,6 @@ const App = () => {
                 setOrders={setOrders}
                 getAllOrders={getAllOrders}
                 user={user}
-                //orderCount={orderCount}
-                // event_id={event_id}
               />
             }
           />

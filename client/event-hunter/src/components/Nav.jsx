@@ -2,7 +2,7 @@ import '../style/nav.css'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
-const Nav = ({ user, orderCount, order, handleLogOut }) => {
+const Nav = ({ user, handleLogOut }) => {
   const [showCategories, setShowCategories] = useState(false)
 
   const toggleCategories = () => {
@@ -17,7 +17,7 @@ const Nav = ({ user, orderCount, order, handleLogOut }) => {
           EventHunter
         </NavLink>
         <NavLink className="navlink" to="/cart">
-          Cart{' '}
+          Cart
         </NavLink>
 
         <NavLink className="navlink" to="/about">

@@ -12,12 +12,10 @@ const Cart = ({
   user,
   cart,
   handleChange,
+  handleDelete,
+  addToCart,
   addOrder,
-  newOrder,
-  setCart,
-  setNewOrder,
-  orders,
-  setOrders,
+
   getAllOrders,
   orderCount,
   setOrderCount
@@ -52,11 +50,14 @@ const Cart = ({
     getAllOrders()
   }, [cart])
 
-  const handleDelete = (orderId) => {
-    const updatedCart = cart.filter((order) => order.id !== orderId)
-    //updateOrderCount(setOrderCount)
-    setCart(updatedCart)
-  }
+  // const handleDelete = (orderId) => {
+  //   const updatedCart = cart.filter((order) => order.id !== orderId)
+  //   if (orderCount > 0) {
+  //     setOrderCount(orderCount - 1)
+  //   }
+  //   //updateOrderCount(setOrderCount)
+  //   setCart(updatedCart)
+  // }
 
   // useEffect(() => {
   //   getAllOrders()
@@ -69,14 +70,19 @@ const Cart = ({
           <div key={event.id}>
             {<EventCard event={event} />}
             <br></br>
-            <button className="delete" onClick={() => handleDelete(event.id)}>
+            <button
+              className="delete"
+              onClick={() => {
+                handleDelete(event.id)
+              }}
+            >
               <FontAwesomeIcon icon={faTrash} /> Delete
             </button>
           </div>
         ))}
       </div>
       {cart.length !== 0 ? (
-        <button className="orderBtn">{<OrderForm user={user} />}</button>
+        <OrderForm user={user} />
       ) : (
         <h1 className="empty">Your cart is empty!</h1>
       )}
