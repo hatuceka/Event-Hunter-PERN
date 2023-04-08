@@ -65,3 +65,24 @@ font-weight: bold;
 padding: 5px;
 
 }
+
+.placed {
+  margin: 100px auto;
+  color: rgba(81, 0, 255, 0.874);
+  font-size: 35px;
+}
+
+.goBackPlaced {
+  width: 200px;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+
+}
+
