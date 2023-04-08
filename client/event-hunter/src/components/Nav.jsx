@@ -41,20 +41,6 @@ const Nav = ({ user, handleLogOut }) => {
             </NavLink>
           </>
         )}
-
-        {/* <div className="dropdown">
-          <button className="dropbtn" onClick={toggleCategories}>
-            Categories
-            <i className="fa fa-caret-down"></i>
-          </button>
-          {showCategories && (
-            <div className="dropdown-content">
-              <NavLink to="/category/music">Music</NavLink>
-              <NavLink to="/events/category/sports">Sports</NavLink>
-              <NavLink to="/category/theater">Theater</NavLink>
-            </div>
-          )} */}
-        {/* </div> */}
       </div>
     </header>
   )
