@@ -1,0 +1,40 @@
+.col {
+  height: 1000px;
+  
+}
+
+.all {
+  /* border: 2px solid rgba(81, 0, 255, 0.874);
+width: 550px; */
+margin: 100px auto;
+}
+
+.input-wrapper {
+
+}
+
+.reg {
+  border: 2px solid rgba(81, 0, 255, 0.874);
+margin: 10px;
+border-radius: 5px;
+background-color: rgba(81, 0, 255, 0.051);
+width: 300px;
+height: 30px;
+}
+
+::placeholder {
+  color: rgba(81, 0, 255, 0.41);
+  font-size: 15px;
+  padding: 8px;
+} 
+
+.account {
+  margin: 30px;
+  font-size: 16px;
+  color: rgba(81, 0, 255, 0.769);
+  font-weight: bold;
+}
+
+.switchbtn {
+
+}

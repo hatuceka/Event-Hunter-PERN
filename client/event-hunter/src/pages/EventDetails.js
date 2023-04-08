@@ -70,7 +70,13 @@ const EventDetails = ({ user, props, addToCart }) => {
               Add to Cart
             </button>
           ) : (
-            <h2 className="detailTitle">Go to LOGIN to buy tickets!</h2>
+            <h2 className="detailEmpty">
+              Go to{' '}
+              <Link className="goBack" to="/login">
+                LOGIN
+              </Link>{' '}
+              to buy tickets!
+            </h2>
           )}
           <Link className="goBack" to="/">
             Go Back to Hunt Events
