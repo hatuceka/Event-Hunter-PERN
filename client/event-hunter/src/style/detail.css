@@ -1,0 +1,67 @@
+.detailDiv {
+  height: 1000px;
+
+}
+
+.eventImage {
+  margin-top: 50px;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  border-radius: 50px;
+}
+
+.detailInfo {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.detailTitle {
+  color: rgba(81, 0, 255, 0.874);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-align: left;
+}
+.span {
+  color: rgb(60, 0, 188);
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 1.3em;
+  
+}
+
+.detailBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add {
+  width: 100px;
+  margin: 0 auto;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+
+
+}
+
+.goBack {
+  width: 200px;
+  margin: 50px auto;
+  border: 2px solid rgba(81, 0, 255, 0.874);
+  background-color: rgba(81, 0, 255, 0.095);
+  color: rgba(81, 0, 255, 0.874);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+padding: 5px;
+
+}
